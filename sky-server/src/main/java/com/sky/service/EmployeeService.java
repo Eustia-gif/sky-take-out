@@ -19,6 +19,9 @@ public interface EmployeeService {
     新增员工
      */
     void save(EmployeeDTO employeeDTO);
+    /*
+    分页查询
+     */
 
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }
