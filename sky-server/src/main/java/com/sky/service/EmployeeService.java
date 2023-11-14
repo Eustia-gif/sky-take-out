@@ -22,6 +22,5 @@ public interface EmployeeService {
     /*
     分页查询
      */
-
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
 }
