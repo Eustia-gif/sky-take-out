@@ -117,9 +117,10 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = Category.builder()
                 .id(id)
                 .status(status)
+                .build();
 //                .updateTime(LocalDateTime.now())
 //                .updateUser(BaseContext.getCurrentId())
-                .build();
+
         categoryMapper.update(category);
     }
 
