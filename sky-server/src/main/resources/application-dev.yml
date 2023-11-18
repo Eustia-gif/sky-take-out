@@ -9,5 +9,5 @@ sky:
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
     bucket-name: eustia-gif
-    access-key-id: LTAI5tBxZkPLqQ4eRMuLN9qU
-    access-key-secret: 4HHpTsg2WPQq9PhUxqAbjsR8uuyBFk
+    access-key-id:
+    access-key-secret:
