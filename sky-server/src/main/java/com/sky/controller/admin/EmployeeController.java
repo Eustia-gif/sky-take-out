@@ -30,7 +30,7 @@ import java.util.Map;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private EmployeeService employeeService     ;
     @Autowired
     private JwtProperties jwtProperties;
 
