@@ -76,15 +76,15 @@ public class DishServiceImpl implements DishService {
     public void deleteBatch(List<Long> ids) {
         //判断当前菜品是否能够删除---是否存在起售中的菜品
         for (Long id : ids) {
-            Dish dish= dishMapper.getById(id);
-            if(dish.getStatus()== StatusConstant.ENABLE){
+            Dish dish = dishMapper.getById(id);
+            if(dish.getStatus() == StatusConstant.ENABLE){
                 //当前菜品处于起售中，不能删除
                 throw new DeletionNotAllowedException(MessageConstant.DISH_ON_SALE);
             }
         }
         //判断当前菜品是否能够删除---是否被套餐关联
         List<Long>setDishIds= setmealDishMapper.getSetmealDishIds(ids);
-        if(setDishIds!=null && setDishIds.size()>0){
+        if(setDishIds != null && setDishIds.size()>0){
             //当前菜品被套餐关联，不能删除
             throw new DeletionNotAllowedException(MessageConstant.CATEGORY_BE_RELATED_BY_DISH);
         }
