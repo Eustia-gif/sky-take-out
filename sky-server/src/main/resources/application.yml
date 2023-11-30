@@ -16,11 +16,11 @@ spring:
       time-between-connect-error-millis: 60000
       min-evictable-idle-time-millis: 300000
       max-evictable-idle-time-millis: 600000
-    redis:
-      host: ${sky.datasource.redis.host}
-      port: ${sky.datasource.redis.port}
-      password: ${sky.datasource.redis.password}
-      database: ${sky.datasource.redis.database}
+  redis:
+    host: ${sky.datasource.redis.host}
+    port: ${sky.datasource.redis.port}
+    password: ${sky.datasource.redis.password}
+    database: ${sky.datasource.redis.database}
 
 
 mybatis:

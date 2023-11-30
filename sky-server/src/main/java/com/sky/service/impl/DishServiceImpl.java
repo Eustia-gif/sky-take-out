@@ -88,7 +88,7 @@ public class DishServiceImpl implements DishService {
             }
         }
         //判断当前菜品是否能够删除---是否被套餐关联
-        List<Long>setDishIds= setmealDishMapper.getSetmealDishIds(ids);
+        List<Long>setDishIds= setmealDishMapper.getSetmealIdsByDishIds(ids);
         if(setDishIds != null && setDishIds.size()>0){
             //当前菜品被套餐关联，不能删除
             throw new DeletionNotAllowedException(MessageConstant.CATEGORY_BE_RELATED_BY_DISH);
@@ -167,6 +167,19 @@ public class DishServiceImpl implements DishService {
         }
 
         return dishVOList;
+    }
+    /**
+     * 根据分类id查询菜品
+     *
+     * @param categoryId
+     * @return
+     */
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder()
+                .categoryId(categoryId)
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.list(dish);
     }
     /**
      * 菜品起售停售
