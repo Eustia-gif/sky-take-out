@@ -32,4 +32,6 @@ public interface OrderMapper {
      */
     @Select("select * from orders where status=#{status} and order_time < (#{orderTime})")
     List<Orders> getByStatusAndOrderTimeLessThan(Integer status, LocalDateTime orderTime);
+
+    void update(Orders orders);
 }
